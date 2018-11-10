@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     // GIPHY API KEY: SJ20szTUJrDjECFq4AvkTmf4OigY3Uie
 
-    var topicList = ["The Tin Man", "Futura", "T-800", "T-1000", "Johnny 5", "Bender", "C-3P0", "R2D2", "The Iron Giant", "Optimus Prime", "Astro Boy", "WALL-E", "RoboCop"];
+    var topicList = ["The Tin Man", "Mega Man", "T-800", "T-1000", "Johnny 5", "Bender", "C-3P0", "R2D2", "The Iron Giant", "Optimus Prime", "Astro Boy", "WALL-E", "RoboCop"];
 
  
  
@@ -15,7 +15,7 @@ $(document).ready(function() {
         
 
         topicList.push(newGifSubject);
-        console.log(topicList);
+        // console.log(topicList);
 
         $("#gif-form")[0].reset();
 
@@ -29,7 +29,7 @@ $(document).ready(function() {
         $(".gif-display").empty();
 
         var gifSubject = $(this).attr("data");
-        console.log(gifSubject);
+        // console.log(gifSubject);
 
 
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
@@ -41,9 +41,9 @@ $(document).ready(function() {
       })
 
       .then(function(response){
-        
+        $(".gif-display").empty();
         gifData = response.data;
-        console.log(gifData);
+        // console.log(gifData);
 
         for (i=0; i < gifData.length; i++) {
             var gifDiv = $("<div>");
