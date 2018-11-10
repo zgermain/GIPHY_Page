@@ -20,9 +20,12 @@ $(document).ready(function() {
         event.preventDefault();
 
         var newGifSubject = $("#user-input").val();
+        
 
         topicList.push(newGifSubject);
         console.log(topicList);
+
+        $("#gif-form")[0].reset();
 
         createButtons();
 
@@ -31,6 +34,7 @@ $(document).ready(function() {
     
     
     function displayButtonGif(){
+        $(".gif-display").empty();
 
         var gifSubject = $(this).attr("data");
         console.log(gifSubject);
@@ -51,6 +55,7 @@ $(document).ready(function() {
 
         for (i=0; i < gifData.length; i++) {
             var gifDiv = $("<div>");
+            gifDiv.attr("class", "gif-div");
             var rating = gifData[i].rating;
             var p = $("<p>").text("Rating: " + rating);
             var gifImage = $("<img>");
@@ -74,7 +79,7 @@ $(document).ready(function() {
 
         for (i=0; i< topicList.length; i++){
             var newButton = $("<button>");
-            newButton.attr("class", "show-gif-button")
+            newButton.attr("class", "show-gif-button btn btn-primary")
                 .attr("data", topicList[i])
                 .text(topicList[i]);
             $(".button-div").append(newButton);
