@@ -3,19 +3,11 @@ $(document).ready(function() {
 
 
     // GIPHY API KEY: SJ20szTUJrDjECFq4AvkTmf4OigY3Uie
-    
-  
 
     var topicList = ["kitty", "doggy", "piggy", "wiggy", "figgy"];
 
-    //method to create buttons from topicList array into button-div
  
-
-
-    
-    
-
-
+ 
     $("#user-submit").on("click", function(event){
         event.preventDefault();
 
@@ -61,13 +53,33 @@ $(document).ready(function() {
             var gifImage = $("<img>");
             gifImage.attr("src", gifData[i].images.fixed_height_still.url)
                 .attr("still", gifData[i].images.fixed_height_still.url)
-                .attr("animate", gifData[i].images.fixed_height.url);
+                .attr("animate", gifData[i].images.fixed_height.url)
+                .attr("data-state", "still")
+                .attr("class", "gif");
             gifDiv.append(p);
             gifDiv.append(gifImage);
 
             $(".gif-display").prepend(gifDiv);
 
         }
+
+        $(document).on("click", ".show-gif-button", displayButtonGif);
+
+        $(".gif").on("click", function() {
+     
+            var still = $(this).attr("data-state");
+      
+            if (still === "still"){
+              var animatedGif = $(this).attr("animate");
+              $(this).attr("src", animatedGif);
+              $(this).attr("data-state", "animate");
+            } else {
+              var stillGif = $(this).attr("still");
+              $(this).attr("src", stillGif);
+              $(this).attr("data-state", "still");
+            };
+           
+        });
 
       })
       createButtons();
@@ -88,8 +100,24 @@ $(document).ready(function() {
 
     };
 
-
+ 
     $(document).on("click", ".show-gif-button", displayButtonGif);
+
+    // $(".gif").on("click", function() {
+ 
+    //     var still = $(this).attr("data-state");
+  
+    //     if (still === "still"){
+    //       var animatedGif = $(this).attr("animate");
+    //       $(this).attr("src", animatedGif);
+    //       $(this).attr("data-state", "animate");
+    //     } else {
+    //       var stillGif = $(this).attr("still");
+    //       $(this).attr("src", stillGif);
+    //       $(this).attr("data-state", "still");
+    //     };
+       
+    // });
 
     createButtons();
 
