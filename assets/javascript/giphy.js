@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     // GIPHY API KEY: SJ20szTUJrDjECFq4AvkTmf4OigY3Uie
 
-    var topicList = ["kitty", "doggy", "piggy", "wiggy", "figgy"];
+    var topicList = ["The Tin Man", "Futura", "T-800", "T-1000", "Johnny 5", "Bender", "C-3P0", "R2D2", "The Iron Giant", "Optimus Prime", "Astro Boy", "WALL-E", "RoboCop"];
 
  
  

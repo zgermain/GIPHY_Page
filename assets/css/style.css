@@ -1,4 +1,12 @@
 
+body{
+    background-color: lightgray;
+}
+
+h1{
+    text-align: center;
+}
+
 .gif-div{
     float: left;
     margin: 20px 5px 0px 5px;
