@@ -1,10 +1,21 @@
 
 .gif-div{
     float: left;
-    margin: 5px 5px;
+    margin: 20px 5px 0px 5px;
 }
 
 .btn{
     min-width: 100px;
+}
+
+.btn-primary{
     margin: 5px 5px;
+}
+
+.btn-secondary{
+    margin: 10px 0px;
+}
+
+#user-input{
+    width: 100%;
 }
